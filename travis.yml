@@ -7,7 +7,7 @@ install:
   - npm install node-static nico mocha-phantomjs
 
 before_script:
-  - git clone git://github.com/aliceui/nico-alice.git _theme
+  - git clone https://github.com/chopper-UI/spm-theme.git _theme
   - node_modules/.bin/nico build --theme _theme -C _theme/nico.js
 
 script:
