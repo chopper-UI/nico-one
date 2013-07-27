@@ -1,5 +1,5 @@
 @ECHO OFF
-set THEME="%HOMEDRIVE%%HOMEPATH%\.spm\themes\alice"
+set THEME="%HOMEDRIVE%%HOMEPATH%\.spm\themes\chopper"
 set SITE=_site
 
 if "%1" == "" goto help
@@ -42,8 +42,7 @@ if "%1" == "server" (
 )
 
 if "%1" == "publish-doc" (
-    spm config source.alipay.url http://yuan.alipay.im
-    spm publish --doc _site -s alipay
+    spm publish --doc _site -s
     goto end
 )
 
