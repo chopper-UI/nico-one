@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CWD=$(dirname "$0")
-THEME="$HOME/.spm/themes/one"
+THEME="$HOME/.spm/themes/chopper"
 
 cd $CWD
 
@@ -13,10 +13,10 @@ else
 fi
 
 if [ ! -d $THEME ]; then
-    echo "clone nico one theme"
-    git clone https://github.com/lepture/nico-one.git $THEME
+    echo "clone nico chopper theme"
+    git clone https://github.com/chopper-UI/spm-theme.git $THEME
 else
-    echo "update nico one theme"
+    echo "update nico chopper theme"
     cd $THEME
     git pull origin master
     cd $CWD

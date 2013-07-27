@@ -10,7 +10,7 @@ module.exports = function(nico) {
   var BaseWriter = nico.BaseWriter;
 
 
-  exports.name = 'chopper';
+  exports.name = 'alice';
   exports.version = '1.0';
   exports.lang = 'zh';
 
