@@ -2,7 +2,7 @@
 
 ---
 
-这是一个 从[nico-alice](https://github.com/aliceui/nico-alice.git)修改的 [nico](http://lab.lepture.com/nico/) 主题。
+这是一个 从[nico-one](https://github.com/lepture/nico-one.git)修改的 [nico](http://lab.lepture.com/nico/) 主题。
 
 
 ## 安装
@@ -60,9 +60,9 @@ cd chopper
 
 ## 使用说明
 
-复制一份 [Makefile](https://github.com/aliceui/nico-alice/blob/master/Makefile) 到你的项目下：
+复制一份 [Makefile](https://github.com/chopper-UI/spm-theme/blob/master/Makefile) 到你的项目下：
 
-Windows 用户可使用 [make.bat](https://github.com/aliceui/nico-alice/blob/master/make.bat)。
+Windows 用户可使用 [make.bat](https://github.com/chopper-UI/spm-theme/blob/master/make.bat)。
 
 
 - `make build-doc` 用于生成文档。
