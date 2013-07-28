@@ -51,7 +51,7 @@
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="{{static_url('one.js')}}"></script>
     {%- if config.package.repository %}
-    <div class="github"><a class="github-link" href="{{config.github}}">Fork me on GitHub</a></div>
+    <div class="github"><a class="github-link" href="{{config.package.repository.url}}" target="_blank">Fork me on GitHub</a></div>
     {%- endif %}
   </body>
 </html>
