@@ -50,7 +50,7 @@
       <p class="copyright">powered by <a href="{{system.homepage}}">{{system.name}}</a> {{system.version}}</p>
     </div>
     <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="{{static_url('one.js')}}"></script>
-    {%- if config.github %}
+    {%- if config.package.repository %}
     <div class="github"><a class="github-link" href="{{config.github}}">Fork me on GitHub</a></div>
     {%- endif %}
   </body>
