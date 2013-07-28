@@ -22,16 +22,5 @@ exports.writers = [
 
 // extends for theme usage, that can be accessable by {{config.xxx}}
 var pkg = require(path.join(process.cwd(), 'package.json'))
-if (pkg.keywords && pkg.keywords.indexOf('alipay') !== -1) {
-  exports.assets_host = 'http://yuan.alipay.im/assets';
-} else {
-  exports.assets_host = 'http://assets.spmjs.org';
-}
-if (['alipay'].indexOf(pkg.family) !== -1) {
-  exports.assets_host = 'http://yuan.alipay.im/assets';
-}
-// stylib just for alipay
-if (['stylib'].indexOf(pkg.name) !== -1 && ['alipay'].indexOf(pkg.keywords[0]) !== -1) {
-  exports.assets_host = 'http://yuan.alipay.im/assets';
-}
+exports.assets_host = 'http://assets.spmjs.org';
 exports.package = pkg;
