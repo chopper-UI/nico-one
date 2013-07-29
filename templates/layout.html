@@ -1,57 +1,49 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="{{theme.lang}}">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="{{system.name}} {{system.version}}">
-    <meta name="theme" content="{{theme.name}} {{theme.version}}">
-    <title>{% block title%}{% endblock %}</title>
-    {%- if config.feedurl %}
-    <link rel="alternate" type="application/rss+xml" href="{{config.feedurl}}" title="{{config.sitename}}" />
-    {%- endif %}
-    <link rel="stylesheet" href="{{static_url('one.css')}}" />
-    <link rel="stylesheet" href="{{static_url('syntax.css')}}" />
+    <meta charset="UTF-8">
+    <title>{%- block title %}{{theme.name|title}}{% endblock -%}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="{{system.name}} {{system.version}}" />
+    {%- block assets %}
+    <link type="image/x-icon" href="{{static_url('css/favicon.ico')}}" rel="icon">
+    <link rel="stylesheet" href="{{static_url('css/normalize.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/site.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/solarized.css')}}" />
+    {%- include "snippet/head.html" %}
+    <script src="{{static_url('js/site.js')}}"></script>
+    <!--[if lt IE 9]>
+    <script src="{{static_url('js/html5shiv.js')}}"></script>
+    <![endif]-->
+    {%- endblock %}
     {%- block afterstyle %}{% endblock %}
-    {%- if config.google %}
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '{{config.google}}']);
-      _gaq.push(['_trackPageview']);
-      _gaq.push(['_trackPageLoadTime']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    {%- endif %}
   </head>
   <body>
-    <div class="navigation" role="navigation">
-      <div class="container">
-        <a class="home" href="{{content_url('index.html')}}">{{config.sitename}}</a>
-        {%- if config.navigation %}
-        <div class="menu">
-          {%- for item in config.navigation %}
-          <a href="{{content_url(item.link)}}">{{item.title}}</a>
-          {%- endfor %}
-        </div>
+    <div id="body-wrapper">
+      {%- block body %}
+      <aside id="sidebar-wrapper">
+        <h1><a href="{{content_url('index.html')}}">{{config.package.name|title}}</a><sup class="package-root"><a href="/">{{config.package.family}}</a></sup></h1>
+        <p class="version">当前版本：<a title="历史记录" href="{{content_url('history.html')}}">{{config.package.version}}</a></p>
+        <p class="description">{{config.package.description}}</p>
+        <p class="keywords" style="display: none;">{{config.package.keywords[0]}}</p>
+        {%- if config.package.repository %}
+        <a class="source" href="{{config.package.repository.url}}" target="_blank">View the Project</a>
         {%- endif %}
+        {%- block subsidebar %}
+        {%- endblock %}
+      </aside>
+      {%- block afterside %}{% endblock %}
+      <div id="content-wrapper">
+        <div id="content">{% block content %}{% endblock %}</div>
       </div>
-    </div>
-    <div class="document">
-      {%- block document %}
       {%- endblock %}
     </div>
-    <div class="footer">
-      {%- if config.footer %}
-      <p>{{config.footer}}</p>
-      {%- endif %}
-      <p class="copyright">powered by <a href="{{system.homepage}}">{{system.name}}</a> {{system.version}}</p>
+    <div id="footer-wrapper">
+      <footer>
+        <p class="powered">
+        {%- include "snippet/foot.html" %}
+        </p>
+      </footer>
     </div>
-    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="{{static_url('one.js')}}"></script>
-    {%- if config.package.repository %}
-    <div class="github"><a class="github-link" href="{{config.package.repository.url}}" target="_blank">Fork me on GitHub</a></div>
-    {%- endif %}
   </body>
 </html>
