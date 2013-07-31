@@ -1,4 +1,4 @@
-# Theme for Alice Documentation
+# Theme for Chopper Documentation
 
 ---
 
@@ -12,23 +12,18 @@
 
 请自己安装 node。
 
-
-### 2. 安装 nico
-
-参考 http://lab.lepture.com/nico/zh/
-
-另外，如果你安装了 socket.io 的话，将有 livereload 功能。
-
-```
-$ npm install socket.io -g
-```
-
-### 3. 安装 chopper theme
+### 2. 安装 chopper theme
 
 Linux & Mac 用户一键安装：
 
 ```
 curl https://raw.github.com/chopper-UI/spm-theme/master/boot.sh | sh
+```
+
+另外，如果你安装了 socket.io 的话，将有 livereload 功能。
+
+```
+$ npm install socket.io -g
 ```
 
 Windows 用户安装：
@@ -69,11 +64,7 @@ Windows 用户可使用 [make.bat](https://github.com/chopper-UI/spm-theme/blob/
 - `make debug` 是开启本地服务器，可用来预览文档，并提供自动构建和 live reload 支持。(从本地 sea-modules 中加载依赖)
 - `make watch` 是开启本地服务器，可用来预览文档，并提供自动构建和 live reload 支持。 (从线上加载依赖)
 - `make server` 普通服务器，无自动刷新功能。
-- `make publish` 发布站点到 gh pages，你需要安装 ghp-import
-
-    ```
-    sudo easy_install -U ghp-import
-    ```
+- `make publish` 发布站点到spmjs.org
 
 Windows 用户注意，如果报错，说找不到 nico，请设置环境变量 `NODE_PATH`。
 请根据实际情况自行解决，一般来说应该设置为：
