@@ -28,30 +28,16 @@ $ npm install socket.io -g
 
 Windows 用户安装：
 
-1.切换到.spm目录
+在cmd下运行下面命令：
 
-2.创建一个`themes`的目录并切换进入
+```
+git clone https://github.com/chopper-UI/spm-theme.git "%HOMEDRIVE%%HOMEPATH%\.spm\themes\chopper
 
-3.从git上拉一份chopper的theme
+```
 
-4.重命名`spm-theme`目录为`chopper`
-
-5.切换到`chopper`目录，把里面的`make.bat`文件复制到一个全局PATH下（保证make命令可用即可）
+切换到`chopper`目录，把里面的`make.bat`文件复制到一个全局PATH下（保证make命令可用即可）
 
 P.S. __注意千万别把`C:\Users\{{username}}\.spm\themes\chopper`目录设置为全局PATH，这样`nico`命令会失效，切记！__
-
-```
-cd C:\Users\{{username}}\.spm
-
-mkdir themes
-cd themes
-
-git clone https://github.com/chopper-UI/spm-theme.git
-
-rename spm-theme chopper
-
-cd chopper
-```
 
 ## 使用说明
 
