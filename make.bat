@@ -42,7 +42,12 @@ if "%1" == "server" (
 )
 
 if "%1" == "publish-doc" (
-    spm publish --doc _site -s
+    spm publish --doc _site -s chopper
+    goto end
+)
+
+if "%1" == "build" (
+    spm build
     goto end
 )
 
