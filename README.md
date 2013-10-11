@@ -32,7 +32,6 @@ Windows 用户安装：
 
 ```
 git clone https://github.com/chopper-UI/spm-theme.git "%HOMEDRIVE%%HOMEPATH%\.spm\themes\chopper
-
 ```
 
 切换到`chopper`目录，把里面的`make.bat`文件复制到一个全局PATH下（保证make命令可用即可）
